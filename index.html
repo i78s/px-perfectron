@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>px-perfectron</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0);
+
+        -webkit-app-region: drag;
+        -webkit-user-select: none;
+      }
+
+      .container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
+
+      .header {
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #eee;
+      }
+
+      form {
+        padding: 3px;
+      }
+
+      .header input {
+        width: 100%;
+        -webkit-app-region: no-drag;
+      }
+
+      webview {
+        display: inline-flex;
+        width: 100%;
+        min-width: 320px;
+        min-height: 640px;
+
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="header">
+
+        <form>
+          <input type="text" name="url" type="url" value="https://liginc.co.jp">
+        </form>
+      </header>
+
+      <webview nodeintegration autosize="on"
+               useragent=""
+               src="https://liginc.co.jp"></webview>
+    </div>
+
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+  </script>
+</html>
