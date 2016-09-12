@@ -14,10 +14,6 @@ app.on('ready', () => {
   Menu.setApplicationMenu(menu);
 });
 
-app.on('activate', (e) => {
-  mainWindow.setIgnoreMouseEvents(false);
-});
-
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
@@ -28,6 +24,8 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   if (mainWindow === null) {
     createWindow();
+  } else {
+    mainWindow.setIgnoreMouseEvents(false);
   }
 });
 
