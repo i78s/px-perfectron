@@ -21,13 +21,17 @@ module.exports = function(mainWindow) {
       label: 'View',
       submenu: [
         {
-          label: 'Reload', accelerator: 'Command+R', click: () => {
-            mainWindow.reload();
+          label: 'Reload',
+          accelerator: 'Command+R',
+          click: () => {
+            mainWindow.webContents.send('reload');
           }
         },
         {
-          label: 'Toggle DevTools', accelerator: 'Alt+Command+I', click: () => {
-            mainWindow.toggleDevTools();
+          label: 'Toggle DevTools',
+          accelerator: 'Alt+Command+I',
+          click: () => {
+            mainWindow.webContents.send('toggle-devtools');
           }
         },
         {

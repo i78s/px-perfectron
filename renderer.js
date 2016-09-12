@@ -10,6 +10,14 @@ let webViewController = new WebViewController(document.querySelector('webview'),
     loadURL: getScreenSize()
 });
 
+ipcRenderer.on('reload', (event) => {
+    webViewController.reload();
+});
+
+ipcRenderer.on('toggle-devtools', (event) => {
+    webViewController.toggleDevTools();
+});
+
 ipcRenderer.on('change-enabled', (event, arg) => {
     webViewController.updateEnabled(arg);
 });

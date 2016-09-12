@@ -40,6 +40,18 @@ class WebViewController {
     }
     this.element.loadURL(url, this.options.loadURL);
   }
+
+  reload() {
+    this.element.reloadIgnoringCache();
+  }
+
+  toggleDevTools() {
+    if (this.element.isDevToolsOpened()) {
+      this.element.closeDevTools();
+      return;
+    }
+    this.element.openDevTools();
+  }
 }
 
 module.exports = WebViewController;
