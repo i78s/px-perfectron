@@ -18,10 +18,6 @@ app.on('activate', (e) => {
   mainWindow.setIgnoreMouseEvents(false);
 });
 
-app.on('browser-window-blur', (e) => {
-  mainWindow.setIgnoreMouseEvents(true);
-});
-
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {

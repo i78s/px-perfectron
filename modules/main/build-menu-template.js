@@ -72,6 +72,7 @@ module.exports = function(mainWindow) {
               type: 'checkbox',
               checked: false,
               click: (e) => {
+                mainWindow.setIgnoreMouseEvents(e.checked);
                 mainWindow.webContents.send('change-enabled', e.checked);
               }
             },
